@@ -21,21 +21,19 @@
 
         <li class=" @if(url('/jadwaldokter') == request()->url() OR url('/profildokter-all') == request()->url() OR url('/jenisdokter') == request()->url() ) active @else '' @endif  treeview">
           <a href="#">
-            <i class="fa fa-hospital-o"></i> <span>Akun Dokter</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-hospital-o"></i> <span>Master Perusahaan</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::to('profildokter-all')}}"><i class="fa fa-user-md"></i> Data Dokter</a></li>
-            <li><a href="{{URL::to('jenisdokter')}}"><i class="fa fa-stethoscope"></i> Data Bidang Dokter</a></li>
-            <li><a href="{{URL::to('jadwaldokter')}}"><i class="fa fa-clock-o"></i> Data Jadwal Dokter</a></li>
+            <li><a href="{{URL::to('dataperusahaan')}}"><i class="fa fa-address-book"></i> Data Perusahaan</a></li>
           </ul>
         </li>
 
         <li class=" @if(url('/pasien-all') == request()->url() ) active @else '' @endif  treeview">
           <a href="#">
-            <i class="fa fa-heartbeat"></i> <span>Data Medical</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-file-text" aria-hidden="true"></i> <span>Data Dokumen</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::to('pasien-all')}}"><i class="fa fa-heart-o"></i> Data Rekam Medis</a></li>
+            <li><a href="{{URL::to('pasien-all')}}"><i class="fa fa-file-o" aria-hidden="true"></i> Dokumen Masuk</a></li>
           </ul>
         </li>
     </li>

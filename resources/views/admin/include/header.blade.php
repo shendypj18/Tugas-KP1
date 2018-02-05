@@ -3,9 +3,9 @@
   <!-- Logo -->
   <a href="{{URL::to('/home')}}" class="logo">
     <!-- mini logo for sidebar mini 50x50 pixels -->
-    <span class="logo-mini"><b>BPS</b>App</span>
+    <span class="logo-mini"><b>BPS</b></span>
     <!-- logo for regular state and mobile devices -->
-    <span class="logo-lg"><b>BPS</b></span>
+    <span class="logo-lg"><b>BPS</b> App</span>
   </a>
 
   <!-- Header Navbar: style can be found in header.less -->

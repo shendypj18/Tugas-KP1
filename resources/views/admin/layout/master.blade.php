@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>MerconAPP | Dashboard</title>
+    <title>BPS APP | Dashboard</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.5 -->
@@ -22,7 +22,7 @@
     <!-- adminpanelLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
 
-    <link href="{{URL::asset('adminpanel/dist/css/skins/_all-skins.min.css')}}"  rel="stylesheet" >
+    <link href="{{URL::asset('adminpanel/dist/css/skins/_all-skins.css')}}"  rel="stylesheet" >
     <link href="{{URL::asset('adminpanel/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css') }}" rel="stylesheet" type="text/css">
     <link href="{{URL::asset('auth/images/logo.ico') }}" rel="SHORTCUT ICON" />
     <link href="{{URL::asset('adminpanel/plugins/datatables/dataTables.bootstrap.css') }}" rel="stylesheet" type="text/css">
@@ -36,7 +36,7 @@
 
   </head>
   <div class="js">
-  <body class="hold-transition skin-blue sidebar-mini">
+  <body class="hold-transition skin-green-light sidebar-mini">
     <div id="preloader"></div>
     <div class="wrapper">
 
@@ -75,7 +75,7 @@
 
   // site preloader -- also uncomment the div in the header and the css style for #preloader
   $(window).load(function(){
-  $('#preloader').delay(200).fadeOut('slow',function(){$(this).remove();});
+  $('#preloader').delay(700).fadeOut('slow',function(){$(this).remove();});
   });
 
   });
