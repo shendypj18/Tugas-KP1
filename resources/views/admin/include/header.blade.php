@@ -107,15 +107,15 @@
         <li class="dropdown user user-menu">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown">
             <img src="{{ URL::asset('adminpanel/dist/img/user-160-nobody.jpg') }}" class="user-image" alt="User Image">
-            <span class="hidden-xs">{{ Auth::user()->name }} <!-- (level {{Auth::user()->level}}) --></span>
+            <span class="hidden-xs"></span>
           </a>
           <ul class="dropdown-menu">
             <!-- User image -->
             <li class="user-header">
               <img src="{{ URL::asset('adminpanel/dist/img/user-160-nobody.jpg') }}" class="img-circle" alt="User Image">
               <p>
-                {{ Auth::user()->name  }}<br>
-                <b>Otoritas user : </b>Level {{Auth::user()->level}}
+              <br>
+                <b>Otoritas user : </b>
                 <small></small>
               </p>
             </li>

@@ -22,6 +22,12 @@ class perusahaanController extends Controller
       return view('admin.dashboard.index.perusahaan.dataperusahaan',$dataperusahaan);
     }
 
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+
     public function tambah()
     {
       return view('admin.dashboard.index.perusahaan.tambahperusahaan');
