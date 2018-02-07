@@ -21,7 +21,7 @@
 
         <li class=" @if(url('/jadwaldokter') == request()->url() OR url('/profildokter-all') == request()->url() OR url('/jenisdokter') == request()->url() ) active @else '' @endif  treeview">
           <a href="#">
-            <i class="fa fa-hospital-o"></i> <span>Master Perusahaan</span> <i class="fa fa-angle-left pull-right"></i>
+            <i class="fa fa-building"></i> <span>Master Perusahaan</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
             <li><a href="{{URL::to('dataperusahaan')}}"><i class="fa fa-address-book"></i> Data Perusahaan</a></li>
@@ -36,6 +36,14 @@
             <li><a href="{{URL::to('dokumenmasuk')}}"><i class="fa fa-file-o" aria-hidden="true"></i> Dokumen Masuk</a></li>
           </ul>
         </li>
+    </li>
+    <li class=" ">
+      <a href="#">
+        <i class="fa fa-server"></i> <span>Master Kegiatan</span> <i class="fa fa-angle-left pull-right"></i>
+      </a>
+      <ul class="treeview-menu">
+        <li><a href="{{URL::to('dataperusahaan')}}"><i class="fa fa-suitcase"></i> Data Kegiatan</a></li>
+      </ul>
     </li>
   </ul>
   </section>

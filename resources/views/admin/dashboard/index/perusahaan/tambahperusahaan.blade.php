@@ -65,7 +65,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-md-4 control-label">Tenaga Kerja</label>
+                          <label class="col-md-4 control-label">Jumlah Tenaga Kerja</label>
                           <div class="col-md-6">
                               <input type="text" class="form-control" name="tenaga_kerja" value="{{old('tenaga_kerja')}}">
                               <small class="help-block"></small>
@@ -79,7 +79,7 @@
                           </div>
                       </div>
                       <div class="form-group">
-                          <label class="col-md-4 control-label">Telepon</label>
+                          <label class="col-md-4 control-label">No Telepon</label>
                           <div class="col-md-6">
                               <input type="text" class="form-control" name="telepon" value="{{old('telepon')}}">
                               <small class="help-block"></small>
