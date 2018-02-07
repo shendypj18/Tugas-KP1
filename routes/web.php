@@ -18,7 +18,7 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
-
+//perusahaan
 Route::get('/dataperusahaan','perusahaanController@index')->name('perusahaan');
 
 Route::get('/tambahperusahaan','perusahaanController@tambah');
@@ -30,3 +30,7 @@ Route::get('/editperusahaan/{idedit}','perusahaanController@editr');
 Route::put('/editperusahaan/{idedit}/simpan','perusahaanController@edit');
 
 Route::post('/tambahperusahaan/tambah','perusahaanController@store');
+//selesai perusahaan
+
+//dokumen
+Route::get('/dokumenmasuk','dokumenController@index')->name('dokumen');

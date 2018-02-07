@@ -28,12 +28,12 @@
           </ul>
         </li>
 
-        <li class=" @if(url('/pasien-all') == request()->url() ) active @else '' @endif  treeview">
+        <li class=" @if(url('/dokumenmasuk') == request()->url() ) active @else '' @endif  treeview">
           <a href="#">
             <i class="fa fa-file-text" aria-hidden="true"></i> <span>Data Dokumen</span> <i class="fa fa-angle-left pull-right"></i>
           </a>
           <ul class="treeview-menu">
-            <li><a href="{{URL::to('pasien-all')}}"><i class="fa fa-file-o" aria-hidden="true"></i> Dokumen Masuk</a></li>
+            <li><a href="{{URL::to('dokumenmasuk')}}"><i class="fa fa-file-o" aria-hidden="true"></i> Dokumen Masuk</a></li>
           </ul>
         </li>
     </li>
