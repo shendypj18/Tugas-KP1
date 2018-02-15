@@ -42,7 +42,7 @@
         <i class="fa fa-server"></i> <span>Master Kegiatan</span> <i class="fa fa-angle-left pull-right"></i>
       </a>
       <ul class="treeview-menu">
-        <li><a href="{{URL::to('dataperusahaan')}}"><i class="fa fa-suitcase"></i> Data Kegiatan</a></li>
+        <li><a href="{{URL::to('datakegiatan')}}"><i class="fa fa-suitcase"></i> Data Kegiatan</a></li>
       </ul>
     </li>
   </ul>

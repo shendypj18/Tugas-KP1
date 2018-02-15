@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\kegiatan as kegiatan;
 
 class kegiatanController extends Controller
 {
@@ -13,7 +14,18 @@ class kegiatanController extends Controller
      */
     public function index()
     {
-        //
+      $datakegiatan['datakegiatan'] = kegiatan::all();
+      return view('admin.dashboard.index.kegiatan.datakegiatan',$datakegiatan);
+    }
+
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function tambah()
+    {
+      return view('admin.dashboard.index.perusahaan.tambahperusahaan');
     }
 
     /**

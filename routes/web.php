@@ -34,3 +34,6 @@ Route::post('/tambahperusahaan/tambah','perusahaanController@store');
 
 //dokumen
 Route::get('/dokumenmasuk','dokumenController@index')->name('dokumen');
+
+//kegiatan
+Route::get('/datakegiatan','kegiatanController@index')->name('kegiatan');

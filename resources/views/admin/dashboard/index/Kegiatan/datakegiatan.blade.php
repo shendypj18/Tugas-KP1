@@ -9,8 +9,8 @@
     <div class="box">
 
       <div class="box-header">
-        <h3 class="box-tittle">Data Perusahaan
-          <a href="{{action('perusahaanController@tambah')}}" class="btn btn-success btn-flat btn-sm" id="tambah" title="tambah">
+        <h3 class="box-tittle">Data kegiatan
+          <a href="{{action('kegiatanController@tambah')}}" class="btn btn-success btn-flat btn-sm" id="tambah" title="tambah">
             <i class="fa fa-plus"></i>
           </a>
         </h3>
@@ -20,9 +20,9 @@
               <thead>
                 <tr>
                   <th>Nomor</th>
-                  <th>KIP</th>
-                  <th>Nama Perusahaan</th>
-                  <th>alamat</th>
+                  <th>nama kegiatan</th>
+                  <th>deskripsi kegiatan</th>
+                  <th>periode</th>
                   <th>Detail</th>
                   <th>Edit</th>
                   <th>Hapus</th>
@@ -32,15 +32,15 @@
               $id = 0;
               @endphp
               <tbody>
-            @foreach ($dataperusahaan as $data)
+            @foreach ($datakegiatan as $data)
             @php
             $id ++;
             @endphp
             <tr>
               <td>{{$id}}</td>
-              <td>{{$data->kip}}</td>
-              <td>{{$data->nama_perusahaan}}</td>
-              <td>{{$data->alamat}}</td>
+              <td>{{$data->nama_kegiatan}}</td>
+              <td>{{$data->deskripsi_kegiatan}}</td>
+              <td>{{$data->periode}}</td>
 
               <td><a tittle="detail " class="btn" data-toggle="modal" data-target="#modalMd">
                  <span class="label label-info"> <i class="fa fa-eye"> Detail</i> </span>
@@ -98,4 +98,18 @@
     </div>
 
 
+@endsection
+
+@section('script')
+  <script>
+    $(document).on("click", ".getid", function(){
+      var kip = $(this).data('kip');
+      var nama_perusahaan = $(this).data('nama_perusahaan');
+      var alamat = $(this).data('alamat');
+      $(".input-group-sm #kip").val(kip);
+      $(".input-group-sm #nama_perusahaan").val(nama_perusahaan);
+      $(".input-group-sm #alamat").val(alamat);
+
+    });
+  </script>
 @endsection
