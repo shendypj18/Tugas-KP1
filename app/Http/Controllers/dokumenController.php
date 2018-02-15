@@ -15,8 +15,8 @@ class dokumenController extends Controller
      */
     public function index()
     {
-      $dokumenmsk['dokumenmsk'] = dokumen::all();
-      return view('admin.dashboard.index.Dokumen.indexdok',$dokumenmsk);
+      $dokumenmsk['dokumenmsk'] = dokumen::join('perusahaan','dokumenmsk.id_msk','=','perusahaan.id_dokumenmsk')->get();
+      return view('admin.dashboard.index.Dokumen.indexutama',$dokumenmsk);
     }
     public function __construct()
     {
@@ -31,6 +31,12 @@ class dokumenController extends Controller
     public function create()
     {
         //
+    }
+
+    public function tambah()
+    {
+      $dokumenmsk['dokumenmsk'] = dokumen::All();
+      return view('admin.dashboard.index.dokumen.indexdok',$dokumenmsk);
     }
 
     /**

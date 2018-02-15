@@ -6,8 +6,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class dokumen extends Model
 {
-  protected $table = 'perusahaan';
-  protected $primarykey = 'id';
-  protected $fillable = ['kip','nama_perusahaan','alamat','produk_utama','tenaga_kerja','contact_person','telepon','nama_petugas'];
+  protected $table = 'dokumenmsk';
+  protected $primarykey = 'id_msk';
+  protected $fillable = ['tglmskkab','tglkrmprov','tglmskprov','nonrespon','respon','keterangannr'];
   public $timestamps = false;
 }

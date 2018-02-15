@@ -4,6 +4,10 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\kegiatan as kegiatan;
+use Validator;
+use Response;
+use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Input;
 
 class kegiatanController extends Controller
 {
@@ -25,7 +29,7 @@ class kegiatanController extends Controller
 
     public function tambah()
     {
-      return view('admin.dashboard.index.perusahaan.tambahperusahaan');
+      return view('admin.dashboard.index.kegiatan.tambahkegiatan');
     }
 
     /**
@@ -44,10 +48,54 @@ class kegiatanController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store()
     {
-        //
-    }
+      $input = Input::all();
+      $messages = [
+        'nama_kegiatan.required' => 'nama kegiatan harus diisi',
+        'tahun.required' => 'tahun harus diisi',
+        'provinsi.required' => 'provinsi harus diisi',
+        'kabkota.required' => 'kabkota harus diisi',
+      ];
+
+      $validator = Validator::make($input,[
+        'nama_kegiatan' => 'required|max:60',
+        'tahun' => 'required|max:15',
+        'provinsi' => 'required|max:25',
+        'kabkota' => 'required|max:35',
+      ],$messages);
+
+      if($validator->fails()){
+        return Redirect::back()->withErrors($validator)->withInput();
+      }
+
+      $tambah = new kegiatan();
+      $tambah->nama_kegiatan = $input['nama_kegiatan'];
+      $tambah->tahun = $input['tahun'];
+      $tambah->provinsi = $input['provinsi'];
+      $tambah->kabkota = $input['kabkota'];
+
+      if(! $tambah->save()){
+        App:abort(500);
+      }
+
+      return Redirect::action('kegiatanController@index')
+                        ->with('successMessage','Data Berhasil Dibuat');
+  }
+
+
+  /**
+   * Display the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
+  /**
+   * Show the form for editing the specified resource.
+   *
+   * @param  int  $id
+   * @return \Illuminate\Http\Response
+   */
 
     /**
      * Display the specified resource.

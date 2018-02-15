@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Redirect;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\DB;
 use App\Perusahaan as perusahaan;
 use Validator;
 use Response;
@@ -18,9 +19,13 @@ class perusahaanController extends Controller
      */
     public function index()
     {
-      $dataperusahaan['dataperusahaan'] = Perusahaan::all();
+      $dataperusahaan['dataperusahaan'] = Perusahaan::join('kegiatan','perusahaan.id_kegiatan','=','kegiatan.id')
+      ->join('dokumenmsk','perusahaan.id_dokumenmsk','=','dokumenmsk.id_msk')
+      ->get();
       return view('admin.dashboard.index.perusahaan.dataperusahaan',$dataperusahaan);
     }
+
+
 
     public function __construct()
     {

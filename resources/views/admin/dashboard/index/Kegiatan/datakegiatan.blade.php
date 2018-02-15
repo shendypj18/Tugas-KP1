@@ -16,14 +16,14 @@
         </h3>
       </div>
         <div class="box-body">
-            <table id="dataperusahaan" class="table table-condensed table-hover">
+            <table id="datakegiatan" class="table table-condensed table-hover">
               <thead>
                 <tr>
                   <th>Nomor</th>
-                  <th>nama kegiatan</th>
-                  <th>deskripsi kegiatan</th>
-                  <th>periode</th>
-                  <th>Detail</th>
+                  <th>Nama kegiatan</th>
+                  <th>Tahun</th>
+                  <th>Provinsi</th>
+                  <th>Kab/Kota</th>
                   <th>Edit</th>
                   <th>Hapus</th>
                 </tr>
@@ -39,13 +39,9 @@
             <tr>
               <td>{{$id}}</td>
               <td>{{$data->nama_kegiatan}}</td>
-              <td>{{$data->deskripsi_kegiatan}}</td>
-              <td>{{$data->periode}}</td>
-
-              <td><a tittle="detail " class="btn" data-toggle="modal" data-target="#modalMd">
-                 <span class="label label-info"> <i class="fa fa-eye"> Detail</i> </span>
-                 </a></td>
-
+              <td>{{$data->tahun}}</td>
+              <td>{{$data->provinsi}}</td>
+              <td>{{$data->kabkota}}</td>
               <td><a href="{{action('perusahaanController@editr',[$data->id])}} " tittle="edit">
                  <span class="label label-warning"> <i class="fa fa-warning"> Edit</i> </span>
                  </a></td>
@@ -61,55 +57,17 @@
     </div>
   </div>
 </div>
-
-
-      <div class="modal fade" id="modalMd" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
-        <div class="modal-dialog modal-lg" >
-          <div class="modal-content">
-            <div class="modal-header">
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">x</span></button>
-              <h4 class="modal-tittle" id="myModalLabel">Detail Perusahaan</h4>
-              <div class="box-body">
-                <table class="table table-condensed table-hover">
-                <thead>
-                  <tr>
-                    <th>Nomor</th>
-                    <th>KIP</th>
-                    <th>Nama Perusahaan</th>
-                    <th>Alamat</th>
-                    <th>Produk Utama</th>
-                    <th>Total Tenaga Kerja</th>
-                    <th>Contact Person</th>
-                    <th>Telepon</th>
-                    <th>Nama Petugas</th>
-                  </tr>
-
-
-              <tr>
-                <td></td>
-                <td></td>
-              </tr>
-            </thead>
-          </table>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-
 @endsection
 
 @section('script')
-  <script>
-    $(document).on("click", ".getid", function(){
-      var kip = $(this).data('kip');
-      var nama_perusahaan = $(this).data('nama_perusahaan');
-      var alamat = $(this).data('alamat');
-      $(".input-group-sm #kip").val(kip);
-      $(".input-group-sm #nama_perusahaan").val(nama_perusahaan);
-      $(".input-group-sm #alamat").val(alamat);
+  <script src="{{URL::asset('adminpanel/plugins/datatables/jquery.dataTables.min.js')}}"></script>
+  <script src="{{ URL::asset('adminpanel/plugins/datatables/dataTables.bootstrap.min.js') }}"></script>
 
-    });
+  <script>
+  $(function(){
+          $('#datakegiatan').DataTable({"pageLength": 10});
+        });
   </script>
+
+
 @endsection

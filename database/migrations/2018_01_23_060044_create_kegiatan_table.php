@@ -15,10 +15,11 @@ class CreateKegiatanTable extends Migration
     {
         Schema::create('kegiatan', function (Blueprint $table) {
             $table->increments('id');
-            $table->increments('id_kegiatan')->unique();
+          //  $table->increments('id_kegiatan')->unique();
             $table->string('nama_kegiatan');
-            $table->string('deskripsi_kegiatan');
-            $table->string('periode');
+            $table->string('tahun');
+            $table->string('provinsi');
+            $table->string('kabkota');
 
         });
     }

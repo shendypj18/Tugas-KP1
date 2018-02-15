@@ -9,33 +9,14 @@
     <div class="box">
 
       <div class="box-header">
-        <h3 class="box-tittle">Dokumen Masuk
+        <h3 class="box-tittle">Data Dokumen Masuk
+          <a href="{{action('dokumenController@tambah')}}" class="btn btn-success btn-flat btn-sm" id="tambah" title="tambah">
+            <i class="fa fa-plus"></i>
+          </a>
         </h3>
-        <div class="row">
-          <div class="col-xs-8">
-              <select name="datakegiatan">
-                <option value="" disabled="disabled" selected="selected">Kegiatan</option>
-                @foreach ($dokumenmsk as $datas)
-                <option value="{{$datas->nama_kegiatan}}">{{$datas->nama_kegiatan}}</option>
-                @endforeach
-              </select>
-            </div>
-        </div><br>
-        <div class="row">
-          <div class="col-xs-8">
-              <select id="myid">
-                <option value="" disabled="disabled" selected="selected">Kabupaten/Kota</option>
-                <option value="Tom">Survei Pangan</option>
-                <option value="Marry">Survei Perikanan</option>
-                <option value="Jane">Survei KSA</option>
-                <option value="Harry">Survei Industri</option>
-              </select>
-            </div>
-        </div>
       </div>
-
         <div class="box-body">
-            <table id="dokumenmsk" class="table table-condensed table-hover form-group">
+            <table id="dokumenmsk" class="table table-condensed table-hover">
               <thead>
                 <tr>
                   <th>Nomor</th>
@@ -60,24 +41,25 @@
             <tr>
               <td>{{$id}}</td>
               <td>{{$datas->nama_perusahaan}}</td>
-              <td><input id="enterDate-{{$id}}" type="text"></td>
-              <td><input type="date" class="theDate"></td>
-              <td><input type="date" class="theDate"></td>
-              <td><input  type="checkbox" name="tidak_realisasi" class="cek" id="" value="Non Respon"></td>
-              <td><input  type="checkbox" name="realisasi" class="todayBox" id="date-{{$id}}" value="Respon"></td>
+              <td>{{$datas->tglmskkab}}</td>
+              <td>{{$datas->tglkrmprov}}</td>
+              <td>{{$datas->tglmskprov}}</td>
+              <td>{{$datas->nonrespon}}</td>
+              <td>{{$datas->respon}}</td>
               <td><button id="btn" disabled> <i class="fa fa-eye"> Keterangan</i> </button></td>
               <td><a href=""  title="cetak" onclick="apakah anda yakin untuk menghapus data ini">
                   <span  class="label label-warning"> <i class="fa fa-print"> Cetak</i> </span>
                   </a></td>
+
+
             @endforeach
             </tr>
           </tbody>
-
         </table>
       </div>
     </div>
   </div>
-  </div>
+</div>
 
 @endsection
 @section('script')

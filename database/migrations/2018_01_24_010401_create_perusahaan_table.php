@@ -23,6 +23,10 @@ class CreatePerusahaanTable extends Migration
             $table->string('contact_person');
             $table->string('telepon');
             $table->string('nama_petugas');
+            $table->integer('id_kegiatan')->unsigned()->nullable();
+            $table->foreign('id_kegiatan')->references('id')->on('kegiatan');
+            $table->integer('id_dokumenmsk')->unsigned()->nullable();
+            $table->foreign('id_dokumenmsk')->references('id_msk')->on('dokumenmsk');
         });
     }
 

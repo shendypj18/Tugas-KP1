@@ -35,5 +35,13 @@ Route::post('/tambahperusahaan/tambah','perusahaanController@store');
 //dokumen
 Route::get('/dokumenmasuk','dokumenController@index')->name('dokumen');
 
+Route::get('/tambahdokumenmasuk','dokumenController@tambah')->name('dokumen');
+
+Route::post('/tambahdokumenmasuk/tambah','dokumenController@store');
+
 //kegiatan
 Route::get('/datakegiatan','kegiatanController@index')->name('kegiatan');
+
+Route::get('/tambahkegiatan','kegiatanController@tambah');
+
+Route::post('/tambahkegiatan/tambah','kegiatanController@store');
