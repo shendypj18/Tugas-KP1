@@ -3,11 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Redirect;
-use Illuminate\Support\Facades\Input;
-use Illuminate\Support\Facades\DB;
-use App\dokumen as dokumen;
-class dokumenController extends Controller
+use App\tabulasi as tabulasi;
+
+class tabulasiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,12 +14,10 @@ class dokumenController extends Controller
      */
     public function index()
     {
-      $dokumenmsk['dokumenmsk'] = dokumen::join('perusahaan','dokumenmsk.id_msk','=','perusahaan.id_dokumenmsk')->get();
-      return view('admin.dashboard.index.Dokumen.indexutama',$dokumenmsk);
-    }
-    public function __construct()
-    {
-        $this->middleware('auth');
+      $dataperusahaan['dataperusahaan'] = tabulasi::join('kegiatan','perusahaan.id_kegiatan','=','kegiatan.id')
+      ->join('dokumenmsk','perusahaan.id_dokumenmsk','=','dokumenmsk.id_msk')
+      ->get();
+      return view('admin.dashboard.index.tabulasi.tabulasi',$dataperusahaan);
     }
 
     /**
@@ -32,12 +28,6 @@ class dokumenController extends Controller
     public function create()
     {
         //
-    }
-
-    public function tambah()
-    {
-      $dokumenmsk = DB::table('kegiatan as k','dokumenmsk as d','perusahaan as p')->get();
-      return view('admin.dashboard.index.dokumen.indexdok', $dokumenmsk);
     }
 
     /**

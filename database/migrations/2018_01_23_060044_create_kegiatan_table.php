@@ -20,6 +20,8 @@ class CreateKegiatanTable extends Migration
             $table->string('tahun');
             $table->string('provinsi');
             $table->string('kabkota');
+            $table->integer('id_dokumenmsk')->unsigned()->nullable();
+            $table->foreign('id_dokumenmsk')->references('id_msk')->on('dokumenmsk');
 
         });
     }

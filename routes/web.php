@@ -45,3 +45,6 @@ Route::get('/datakegiatan','kegiatanController@index')->name('kegiatan');
 Route::get('/tambahkegiatan','kegiatanController@tambah');
 
 Route::post('/tambahkegiatan/tambah','kegiatanController@store');
+
+//tabulasi
+Route::get('/datatabulasi','tabulasiController@index')->name('tabulasi');

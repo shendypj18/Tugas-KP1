@@ -35,6 +35,9 @@
           <ul class="treeview-menu">
             <li><a href="{{URL::to('dokumenmasuk')}}"><i class="fa fa-file-o" aria-hidden="true"></i> Dokumen Masuk</a></li>
           </ul>
+          <ul class="treeview-menu">
+            <li><a href="{{URL::to('datatabulasi')}}"><i class="fa fa-suitcase"></i> Data Tabulasi</a></li>
+          </ul>
         </li>
     </li>
     <li class=" ">
